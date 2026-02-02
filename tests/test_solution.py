@@ -1,5 +1,5 @@
-## Student Name:
-## Student ID: 
+## Student Name: Ajit Sanghera
+## Student ID: 218938688
 
 """
 Public test suite for the meeting slot suggestion exercise.
@@ -42,6 +42,12 @@ def test_non_dict_request_raises():
     # Reason: request must be a dict
     resources = {'cpu': 5}
     requests = [{'cpu': 2}, ['mem', 1]]  # malformed request
+    with pytest.raises(ValueError):
+        is_allocation_feasible(resources, requests)
+
+def test_request_float():
+    resources = {'cpu': 10}
+    requests = [{'cpu': 2.0}, {'gpu': 1.1}]
     with pytest.raises(ValueError):
         is_allocation_feasible(resources, requests)
 

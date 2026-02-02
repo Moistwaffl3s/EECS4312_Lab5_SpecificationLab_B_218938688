@@ -1,5 +1,5 @@
-## Student Name:
-## Student ID: 
+## Student Name: Ajit sanghera
+## Student ID: 218938688
 
 """
 Stub file for the is allocation feasible exercise.
@@ -29,5 +29,35 @@ def is_allocation_feasible(
         True if the allocation is feasible, False otherwise.
 
     """
+
+    if not isinstance(resources, dict):
+        raise ValueError("must be a distionary")
+
+    if not isinstance(requests, list):
+        raise ValueError("must be a list")
+
+    for req in requests:
+
+        if not isinstance(req, dict):
+            raise ValueError("must be a dictionary")
+
+        for resource, amount in req.items():
+
+            if resource not in resources:
+                return False
+
+            if amount < 0:
+                raise ValueError(f" the allocation cannot be less than 0")
+
+            if not isinstance(resource, str):
+                raise ValueError("resource must be a string")
+
+            if not isinstance(amount, int):
+                raise ValueError("resource must be a integer")
+
+            if amount > resources.get(resource)
+                return False 
+    return True
+
     # TODO: Implement this function
     raise NotImplementedError("suggest_slots function has not been implemented yet")
