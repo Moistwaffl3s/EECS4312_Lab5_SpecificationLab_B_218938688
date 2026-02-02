@@ -1,6 +1,6 @@
 ## TODO:
-## Student Name:
-## Student ID: 
+## Student Name: Ajit Sanghera
+## Student ID: 218938688
 
 # Is Resource Allocation Feasible Lab Repository
 
